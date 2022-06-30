@@ -112,9 +112,9 @@ def parse_events(sock, loop_count=100):
                 rssi, = struct.unpack("b", bytes([packet[packetOffset-1]]))
             else:
                 rssi, = struct.unpack("b", packet[packetOffset-1])
-
+                print(rssi)
             resultsArray = [{"type": type, "uuid": uuid, "major": majorVal, "minor": minorVal, "rssi": rssi, "macAddress": macAddress}]
-
+            
             return resultsArray
-
+     
     return results
